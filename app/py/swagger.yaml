@@ -1,0 +1,101 @@
+swagger: '2.0'
+
+################################################################################
+#                              API Information                                 #
+################################################################################
+info:
+  title: Test
+  version: v0
+  description: |
+    Test API
+
+################################################################################
+#                    Base path, Schemes and Content Type                       #
+################################################################################
+basePath: /v0
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+
+################################################################################
+#                                  Paths                                       #
+################################################################################
+paths:
+  /events/:
+    post:
+      tags:
+        - Events
+      summary: Add an event
+      parameters:
+        - name: event
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Event'
+      responses:
+        200:
+          description: Successful response
+          schema:
+            $ref: '#/definitions/Event'
+################################################################################
+#                              Definitions                                     #
+################################################################################
+definitions:
+  Event:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int32
+        description: Unique identifier of event
+        example: 1
+      sport:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      category:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      tournament:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      round:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      team_a:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      team_b:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      score:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      state:
+        type: string
+        description: event sport
+        example: Tomas Lipovsek
+      start_timestamp:
+        type: number
+        description: event sport
+        example: Tomas Lipovsek
+    required:
+      - id
+      - sport
+      - category
+      - tournament
+      - round
+      - team_a
+      - team_b
+      - score
+      - state
+      - start_timestamp

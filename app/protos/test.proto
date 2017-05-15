@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+package test;
+
+service Events {
+  rpc PostEvent (Event) returns (Event) {
+    option (google.api.http) = {
+      post: "/v0/events"
+      body: "*"
+    };
+  }
+}
+
+message Event {
+  int32 id = 1;
+  string sport = 2;
+  string category = 3;
+  string tournament = 4;
+  string round = 5;
+  string team_a = 6;
+  string team_b = 7;
+  string score = 8;
+  string state = 9;
+  double start_timestamp = 10;
+}
